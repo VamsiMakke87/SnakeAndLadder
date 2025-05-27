@@ -4,9 +4,10 @@ import model.dice.Dice;
 import model.dice.DiceFactory;
 import model.dice.DiceType;
 import model.exception.InvalidDiceTypeException;
+import model.obstacle.Obstacle;
+import model.obstacle.ObstacleType;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GameConfig {
 
@@ -20,12 +21,12 @@ public class GameConfig {
 
     private final DiceFactory diceFactory;
 
+
     public GameConfig(int numberOfDice, int boardSize, DiceType diceType) throws InvalidDiceTypeException {
         this.numberOfDice = numberOfDice;
         this.boardSize = boardSize;
         this.diceType = diceType;
         this.diceFactory = new DiceFactory();
-
     }
 
     public List<Dice> getDices() throws InvalidDiceTypeException {
@@ -46,5 +47,10 @@ public class GameConfig {
 
     public DiceType getDiceType() {
         return diceType;
+    }
+
+
+    public int getBoardSize() {
+        return boardSize;
     }
 }

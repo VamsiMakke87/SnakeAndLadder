@@ -1,6 +1,8 @@
 import model.config.GameConfig;
 import model.dice.DiceType;
+import model.obstacle.Obstacle;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -38,6 +40,8 @@ public class Main {
                 }
             }
             GameConfig gameConfig = new GameConfig(numberOfDice, boardSize, diceType);
+
+
 
 
 
