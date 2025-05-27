@@ -71,10 +71,10 @@ public class Board {
     }
 
     public void rollDice(Player player) throws InvalidDiceTypeException {
-        List<Dice> dices = gameConfig.getDices();
+        List<Dice> diceList = gameConfig.getDices();
         int numberOfStepsToMove = 0;
-        for (int i = 0; i < dices.size(); i++) {
-            int diceFace = dices.get(i).roll();
+        for (int i = 0; i < diceList.size(); i++) {
+            int diceFace = diceList.get(i).roll();
             System.out.println("Dice 1: " + diceFace);
             numberOfStepsToMove += diceFace;
         }
@@ -87,7 +87,7 @@ public class Board {
 
     private void moveSteps(Player player, int numberOfStepsToMove) {
 
-        int currPosition = player.getPositon();
+        int currPosition = player.getPosition();
         int nextPosition = currPosition + numberOfStepsToMove;
         if (nextPosition > gameConfig.getBoardSize()) {
             nextPosition=currPosition;
@@ -104,7 +104,7 @@ public class Board {
             }
         }
 
-        player.setPositon(nextPosition);
+        player.setPosition(nextPosition);
 
     }
 

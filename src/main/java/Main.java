@@ -65,17 +65,17 @@ public class Main {
             while (true) {
 
                 Player currPlayer = playerDeque.removeFirst();
-                int previousPosition = currPlayer.getPositon();
+                int previousPosition = currPlayer.getPosition();
                 System.out.println(currPlayer.getName() + "'s turn");
                 board.rollDice(currPlayer);
-                if (currPlayer.getPositon() == boardSize) {
+                if (currPlayer.getPosition() == boardSize) {
                     System.out.println("______________________________________________");
                     System.out.println(currPlayer.getName() + " reached destination");
                     System.out.println("______________________________________________");
                     winners.add(currPlayer);
                     if (playerDeque.size() == 1) break;
                 } else {
-                    System.out.println(currPlayer.getName() + " move from " + previousPosition + " to " + currPlayer.getPositon());
+                    System.out.println(currPlayer.getName() + " move from " + previousPosition + " to " + currPlayer.getPosition());
                     playerDeque.addLast(currPlayer);
                 }
             }

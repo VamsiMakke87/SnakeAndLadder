@@ -4,22 +4,22 @@ public class Player {
 
     private String name;
 
-    private int positon;
+    private int position;
 
     public Player(String name){
         this.name=name;
-        this.positon=0;
+        this.position=0;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPositon() {
-        return positon;
+    public int getPosition() {
+        return position;
     }
 
-    public void setPositon(int positon) {
-        this.positon = positon;
+    public void setPosition(int position) {
+        this.position = position;
     }
 }
