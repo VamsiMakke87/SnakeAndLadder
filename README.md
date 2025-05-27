@@ -142,7 +142,7 @@ java -cp out Main
    Launch the app via the above command. The game prompts for user input.
 
 2. **Input Number of Players**
-   Enter the total number of participants (e.g., 2).
+   Enter the total number of participants (Minimum 2 players).
 
 3. **Input Player Names**
    Enter unique names for each player when prompted.
