@@ -75,7 +75,7 @@ public class Board {
         int numberOfStepsToMove = 0;
         for (int i = 0; i < diceList.size(); i++) {
             int diceFace = diceList.get(i).roll();
-            System.out.println("Dice 1: " + diceFace);
+            System.out.println("Dice " + (i + 1) + ":" + diceFace);
             numberOfStepsToMove += diceFace;
         }
 
@@ -90,9 +90,9 @@ public class Board {
         int currPosition = player.getPosition();
         int nextPosition = currPosition + numberOfStepsToMove;
         if (nextPosition > gameConfig.getBoardSize()) {
-            nextPosition=currPosition;
+            nextPosition = currPosition;
             System.out.println("Can only move " + (gameConfig.getBoardSize() - currPosition) + " places");
-        } else if(nextPosition < gameConfig.getBoardSize()) {
+        } else if (nextPosition < gameConfig.getBoardSize()) {
             if (obstacleMap.containsKey(nextPosition)) {
                 Obstacle obstacle = obstacleMap.get(nextPosition);
                 if (obstacle.getObstacleType() == ObstacleType.LADDER) {

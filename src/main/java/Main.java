@@ -25,15 +25,21 @@ public class Main {
                 }
             }
             for (int i = 1; i <= numberOfPlayers; i++) {
-                System.out.println("Enter player " + i + " name:");
-                String playerName = sc.nextLine();
+                String playerName;
+                while (true) {
+                    System.out.println("Enter player " + i + " name:");
+                    playerName = sc.nextLine();
+                    if (playerName.trim().length() == 0) {
+                        System.out.println("Player name has to be atleast one character!");
+                    } else {
+                        break;
+                    }
+                }
                 playerDeque.add(new Player(playerName));
             }
             System.out.println("Enter board size:");
             int boardSize = Integer.parseInt(sc.nextLine());
             DiceType diceType;
-
-            System.out.println(playerDeque);
 
             while (true) {
                 try {
@@ -68,6 +74,7 @@ public class Main {
                 int previousPosition = currPlayer.getPosition();
                 System.out.println(currPlayer.getName() + "'s turn");
                 board.rollDice(currPlayer);
+                System.out.println(currPlayer.getName() + " move from " + previousPosition + " to " + currPlayer.getPosition());
                 if (currPlayer.getPosition() == boardSize) {
                     System.out.println("______________________________________________");
                     System.out.println(currPlayer.getName() + " reached destination");
@@ -75,7 +82,6 @@ public class Main {
                     winners.add(currPlayer);
                     if (playerDeque.size() == 1) break;
                 } else {
-                    System.out.println(currPlayer.getName() + " move from " + previousPosition + " to " + currPlayer.getPosition());
                     playerDeque.addLast(currPlayer);
                 }
             }
